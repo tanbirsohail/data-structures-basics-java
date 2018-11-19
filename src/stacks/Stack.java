@@ -1,16 +1,6 @@
 package stacks;
 
 public class Stack<T> {
-	// Private inner class that holds the data elements.
-	@SuppressWarnings("hiding")
-	private class StackNode<T> {
-		T data;
-		StackNode<T> next;
-
-		StackNode(T data) {
-			this.data = data;
-		}
-	}
 
 	private StackNode top;
 
