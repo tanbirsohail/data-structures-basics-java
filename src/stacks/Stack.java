@@ -3,16 +3,16 @@ package stacks;
 public class Stack<T> {
 	// Private inner class that holds the data elements.
 	@SuppressWarnings("hiding")
-	private class Node<T> {
+	private class StackNode<T> {
 		T data;
-		Node<T> next;
+		StackNode<T> next;
 
-		Node(T data) {
+		StackNode(T data) {
 			this.data = data;
 		}
 	}
 
-	private Node top;
+	private StackNode top;
 
 	public boolean isNull() {
 		return top == null;
@@ -29,7 +29,7 @@ public class Stack<T> {
 	}
 
 	public void push(T data) {
-		Node<T> node = new Node<>(data);
+		StackNode<T> node = new StackNode<>(data);
 		node.next = top;
 		top = node;
 	}
@@ -41,7 +41,7 @@ public class Stack<T> {
 	}
 
 	void displayStack() {
-		Node<T> iterator = top;
+		StackNode<T> iterator = top;
 		while (iterator != null) {
 			System.out.print(iterator.data + " -> ");
 			iterator = iterator.next;
